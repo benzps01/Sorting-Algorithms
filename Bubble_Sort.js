@@ -8,7 +8,7 @@ let unSorted = [6,4,0,3,-2,1];
 
 //1st approach is using 2 for loops to sort the array
 for(let i = 0; i < unSorted.length; i++){
-    for(let j = 0; j < unSorted.length; j++){
+    for(let j = 0; j < unSorted.length; j++){  //Here we make use of 2 for loops
         if (unSorted[j] > unSorted[j+1]){
             let temp = unSorted[j];
             unSorted[j] = unSorted[j+1];
@@ -16,5 +16,19 @@ for(let i = 0; i < unSorted.length; i++){
         }
     }
 }
+console.log(unSorted);
 
+
+//2nd approach using 1 for loop and a check variable
+let check;
+do {
+    for (let i = 0; i < unSorted.length; i++){
+        if(unSorted[i] > unSorted[i+1]){ //This is a faster and much more efficient approach
+            let temp = unSorted[i];
+            unSorted[i] = unSorted[i+1];
+            unSorted[i+1] = temp;
+            check = true;
+        }
+    }
+} while(check)
 console.log(unSorted);
